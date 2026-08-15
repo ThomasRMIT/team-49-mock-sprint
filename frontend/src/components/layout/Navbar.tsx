@@ -16,16 +16,16 @@ export function Navbar() {
   }
 
   return (
-    <header className="flex h-14 items-center justify-between border-b border-zinc-200 bg-white px-4 dark:border-zinc-800 dark:bg-zinc-900">
-      <div className="text-sm font-semibold lg:hidden">
+    <header className="flex h-14 items-center justify-between border-b border-[#8B5CF6]/20 bg-[#0C0A14] px-4">
+      <div className="text-sm font-semibold lg:hidden text-white">
         {process.env.NEXT_PUBLIC_APP_NAME ?? 'App'}
       </div>
       <div className="flex-1" />
       <div className="flex items-center gap-3">
-        {user && <span className="hidden text-sm text-zinc-500 sm:block">{user.email}</span>}
+        {user && <span className="hidden text-sm text-slate-400 sm:block">{user.email}</span>}
         <Link
           href="/profile"
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] transition-colors hover:bg-[#8B5CF6]/20"
           aria-label="Profile"
         >
           <User className="h-4 w-4" />
@@ -33,7 +33,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={handleSignOut}
-          className="flex h-8 w-8 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+          className="flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-[#8B5CF6]/10 hover:text-[#8B5CF6]"
           aria-label="Sign out"
         >
           <LogOut className="h-4 w-4" />

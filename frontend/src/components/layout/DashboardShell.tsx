@@ -4,7 +4,7 @@ import { Navbar } from './Navbar'
 
 export function DashboardShell({ children }: { children: ReactNode }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-zinc-50 dark:bg-zinc-950">
+    <div className="flex h-screen overflow-hidden" style={{ background: 'linear-gradient(135deg, #050507 0%, #1a0f2e 100%)' }}>
       <Sidebar />
       <div className="flex flex-1 flex-col overflow-hidden">
         <Navbar />
