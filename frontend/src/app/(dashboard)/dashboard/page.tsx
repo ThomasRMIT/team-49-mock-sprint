@@ -18,8 +18,8 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <h1 className="text-2xl font-bold tracking-tight text-white">Dashboard</h1>
+        <p className="mt-1 text-sm text-slate-400">
           Welcome back{greetingName ? `, ${greetingName}` : ''}.
         </p>
       </div>
@@ -28,10 +28,10 @@ export default async function DashboardPage() {
         {(['Metric One', 'Metric Two', 'Metric Three'] as const).map((title) => (
           <div
             key={title}
-            className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+            className="rounded-lg border border-[#8B5CF6]/20 bg-[#0C0A14] p-6 shadow-sm"
           >
-            <p className="text-sm font-medium text-zinc-500">{title}</p>
-            <p className="mt-2 text-3xl font-bold">—</p>
+            <p className="text-sm font-medium text-slate-400">{title}</p>
+            <p className="mt-2 text-3xl font-bold text-white">—</p>
           </div>
         ))}
       </div>
