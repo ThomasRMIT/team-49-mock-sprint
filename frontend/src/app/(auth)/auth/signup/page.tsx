@@ -24,7 +24,7 @@ export default function SignUpPage() {
 
   useEffect(() => {
     if (!loading && !isSubmitting && user) {
-      router.replace('/dashboard')
+      router.replace('/team')
     }
   }, [loading, isSubmitting, user, router])
 
@@ -33,7 +33,7 @@ export default function SignUpPage() {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-      router.replace('/dashboard')
+      router.replace('/team')
     } catch {
       toast.error('Google sign-in failed. Please try again.')
     }
@@ -96,6 +96,27 @@ export default function SignUpPage() {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          <div className="space-y-2">
+            <label htmlFor="displayName" className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+              Full Name
+            </label>
+            <input
+              id="displayName"
+              type="text"
+              autoComplete="name"
+              aria-invalid={!!errors.displayName}
+              aria-describedby={errors.displayName ? 'displayName-error' : undefined}
+              className="w-full rounded-md border border-slate-700/50 bg-slate-800/30 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20 focus:outline-none transition-all aria-invalid:border-red-500"
+              placeholder="John Doe"
+              {...register('displayName')}
+            />
+            {errors.displayName && (
+              <p id="displayName-error" className="text-xs text-red-400" role="alert">
+                {errors.displayName.message}
+              </p>
+            )}
+          </div>
+
           <div className="space-y-2">
             <label htmlFor="email" className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               Email
